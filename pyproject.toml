@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "git-collaborator"
+version = "0.1.0"
+description = "AST-aware Git collaboration & conflict resolution for Python projects"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Git-Collaborator Team"}]
+
+dependencies = [
+    "typer>=0.9.0",
+    "rich>=13.0.0",
+    "textual>=0.40.0",
+    "gitpython>=3.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-tmp-files>=0.0.2",
+]
+
+[project.scripts]
+gc = "git_collab.cli.main:app"
+
+[tool.setuptools.packages.find]
+include = ["git_collab*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

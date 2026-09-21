@@ -1,0 +1,26 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Testing caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local demo folder (regenerated via python demo_setup.py)
+demo-project/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
